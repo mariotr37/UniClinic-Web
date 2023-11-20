@@ -16,12 +16,15 @@
 
     <div>
         <label>Foto: </label>
-        <input type="text" name="urlFoto" [(ngModel)]="registroPacienteDTO.urlFoto" />
+        <input type="file" required name="urlFoto" [(ngModel)]="registroPacienteDTO.urlFoto" />
     </div>
 
     <div>
         <label>Ciudad: </label>
-        <input type="text" name="ciudad" [(ngModel)]="registroPacienteDTO.ciudad" />
+        <select name="ciudad" required [(ngModel)]="registroPacienteDTO.ciudad" >
+        <option value="" selected >Seleccione una ciudad</option>
+        <option [value]="item" *ngFor="let item of ciudades; index as i" >{{item}}</option>
+        </select>
     </div>
 
     <div>
